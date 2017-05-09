@@ -5,7 +5,7 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
 /* Use declare to tell the compiler that the vairables/functions will exist in Runtime */
 declare var $:any;
 declare function require(name:string);
-
+import * as Chartist from 'chartist';
 
 @Component({
     selector: 'home-cmp',
@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit{
         //     $checkbox.checkbox();
         // });
         var initDemo = require('../../../assets/js/charts.js');
-        initDemo();
+        var TmpMaterial = require('../../../assets/js/material-dashboard.js');
+        TmpMaterial.LoadFunction();
+        initDemo(Chartist);
     }
 }

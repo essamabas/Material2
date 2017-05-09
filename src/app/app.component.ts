@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){
       $.getScript('../assets/js/material-dashboard.js');
       $.getScript('../assets/js/initMenu.js');
+      $.getScript('../assets/js/chart.min.js');
   }
   constructor(location: PlatformLocation, public vcr: ViewContainerRef, public dialog: MdDialog) {
 
