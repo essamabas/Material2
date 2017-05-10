@@ -21,9 +21,11 @@ export class HomeComponent implements OnInit{
         //     var $checkbox = $(this);
         //     $checkbox.checkbox();
         // });
+        /*
         var initDemo = require('../../../assets/js/charts.js');
         var TmpMaterial = require('../../../assets/js/material-dashboard.js');
         TmpMaterial.LoadFunction();
         initDemo(Chartist);
+        */
     }
 }
