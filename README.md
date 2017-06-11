@@ -1,28 +1,11 @@
-# Material2
+Blog: https://devblog.dymel.pl/2016/10/25/angular2-cli-with-aspnet-core-application-tutorial/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+Seed project demonstrating a setup of an application using ASP.NET Core for backend and Angular2 for frontend, using Angular CLI tool to create and manage builds. 
 
-## Development server
+# To Debug
+1. Run command prompt, enter /src/Frontend/src directory and execute `npm start`. This will start webpack dev server and direct `/api` calls to backend application. 
+1. Start Backend application from VisualStudio
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# To build 
+1. Run `npm build` from command prompt in /src/Frontend/src directory. This will build the angular application and copy it to wwwroot directory in backend application
+1. Publish Backend application from VisualStudio or use the dotnet cli. 

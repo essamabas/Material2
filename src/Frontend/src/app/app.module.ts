@@ -37,7 +37,7 @@ import { NavbarModule} from './shared/navbar/navbar.module';
     FooterModule,
     BrowserAnimationsModule,
     /* Root Modules */
-    MaterialModule.forRoot(),
+    MaterialModule,
     RouterModule.forRoot([])
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
