@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,14 +14,16 @@ namespace Backend
         {
             var config = new ConfigurationBuilder()
                 .AddCommandLine(args)
+                .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
-            
+
             var host = new WebHostBuilder()
-                .UseKestrel()
                 .UseConfiguration(config)
+                .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5001/")
                 .Build();
 
             host.Run();
