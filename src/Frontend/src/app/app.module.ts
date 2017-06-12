@@ -19,28 +19,62 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
+import {TranslateModule} from 'ng2-translate';
+import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 
-@NgModule({
-  declarations: [
+/* Import User Services */
+import { UserService } from './services/user.service';
+import { MessagesService } from './services/messages.service';
+import { CanActivateGuard } from './services/guard.service';
+import { NotificationService } from './services/notification.service';
+import { BreadcrumbService } from './services/breadcrumb.service';
+import { AppTranslateService } from './services/translate.service';
+import { LoggerService } from './services/logger.service';
+
+let components = [
     AppComponent,
     DashboardComponent,
     SettingsDialog
-  ],
-  imports: [
+];
+
+let modules = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    /* Root Modules */
+    RouterModule.forRoot([]),   
     /* User Modules */
     DashboardModule,
     SidebarModule,
     NavbarModule,
     FooterModule,
     BrowserAnimationsModule,
-    /* Root Modules */
     MaterialModule,
-    RouterModule.forRoot([])
+    TranslateModule.forRoot(),
+    ToasterModule    
+];
+
+let services = [
+    UserService,
+    BreadcrumbService,
+    MessagesService,
+    CanActivateGuard,
+    NotificationService,
+    AppTranslateService,
+    LoggerService
+];
+
+@NgModule({
+  declarations: [
+    components
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  imports: [
+    modules
+  ],
+  providers: [
+      {provide: LocationStrategy, useClass: HashLocationStrategy},
+      services
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
